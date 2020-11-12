@@ -6,16 +6,17 @@ metadata:
     kubernetes.io/ingress.class: traefik
 spec:
   rules:
-  - host: mytraefik.dashboard
+  - host: index.namdemo
     http:
-      paths:
-      - path: /index
-        pathType: Prefix
+      paths: 
+      - path: /
         backend:
           serviceName: index
-          servicePort: 80
-      - path: /cheese
-        pathType: Prefix
+          servicePort: 80 
+  - host: cheese.namdemo
+    http:
+      paths:
+      - path: /
         backend:
           serviceName: cheese
           servicePort: 80
